@@ -14,7 +14,7 @@ pack_spi_full_image()
 {
 	gzip -k -f ${IMAGES}/*.bmp
 
-	dd if=/dev/zero of=${OUT}/spi_recovery.img bs=512 count=16592 conv=fsync,notrunc
+	dd if=/dev/zero of=${OUT}/spi_recovery.img bs=512 count=12392 conv=fsync,notrunc
 
 	# mbr, uboot and trust
 	dd if=${OUT}/rk3326_header_miniloader_spiboot.img of=${OUT}/spi_recovery.img bs=512 seek=0 count=2048 conv=fsync,notrunc
